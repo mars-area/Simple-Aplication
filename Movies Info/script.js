@@ -2,7 +2,7 @@ const searchBtn = document.querySelector('.search-button');
 searchBtn.addEventListener('click', function() {
 
     const inputKeyword = document.querySelector('.input-keyword');
-    fetch('http://www.omdbapi.com/?apikey=b82ec055&s=' + inputKeyword.value)
+    fetch('https://www.omdbapi.com/?apikey=b82ec055&s=' + inputKeyword.value)
         .then(response => response.json())
         .then(json => {
             const movies = json.Search;
@@ -17,7 +17,7 @@ searchBtn.addEventListener('click', function() {
             detailBtn.forEach(btn => {
                 btn.addEventListener('click', function() {
                     const imdbid = this.dataset.imdbid;
-                    fetch('http://www.omdbapi.com/?apikey=b82ec055&i=' + imdbid)
+                    fetch('https://www.omdbapi.com/?apikey=b82ec055&i=' + imdbid)
                         .then(response => response.json())
                         .then(json => {
                             const movieDetails = showMovieDetail(json);
